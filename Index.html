@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Алгоритмический визуализатор</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        #visualizer-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 300px;
+            border: 1px solid #ddd;
+            margin: 20px 0;
+        }
+        .bar {
+            width: 20px;
+            margin: 0 2px;
+            background-color: #007bff;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Алгоритмический визуализатор</h1>
+    <div id="visualizer-container"></div>
+    <button id="generate-btn">Сгенерировать массив</button>
+    <button id="bubble-sort-btn">Пузырьковая сортировка</button>
+    <button id="insertion-sort-btn">Сортировка вставками</button>
+    <button id="quick-sort-btn">Быстрая сортировка</button>
+    <script src="script.js"></script>
+</body>
+</html>
