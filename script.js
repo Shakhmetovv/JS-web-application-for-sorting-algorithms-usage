@@ -1,9 +1,6 @@
-// Алгоритмический визуализатор сортировки на JavaScript с несколькими алгоритмами
-
 const container = document.getElementById("visualizer-container");
 const array = [];
 
-// Генерация случайного массива
 function generateArray(size = 20) {
     array.length = 0;
     for (let i = 0; i < size; i++) {
@@ -13,7 +10,7 @@ function generateArray(size = 20) {
     renderArray();
 }
 
-// Отображение массива на экране
+
 function renderArray() {
     container.innerHTML = "";
     array.forEach(value => {
@@ -24,7 +21,7 @@ function renderArray() {
     });
 }
 
-// Пузырьковая сортировка с визуализацией
+
 async function bubbleSort() {
     for (let i = 0; i < array.length; i++) {
         for (let j = 0; j < array.length - i - 1; j++) {
@@ -40,7 +37,7 @@ async function bubbleSort() {
     }
 }
 
-// Сортировка вставками с визуализацией
+
 async function insertionSort() {
     for (let i = 1; i < array.length; i++) {
         let key = array[i];
@@ -59,7 +56,7 @@ async function insertionSort() {
     }
 }
 
-// Быстрая сортировка с визуализацией
+
 async function quickSort(start = 0, end = array.length - 1) {
     if (start >= end) return;
 
@@ -90,20 +87,20 @@ async function partition(start, end) {
     return pivotIndex;
 }
 
-// Визуализация текущего сравнения
+
 function renderArrayHighlight(index1, index2) {
     const bars = container.childNodes;
-    bars.forEach(bar => (bar.style.backgroundColor = "#007bff")); // Сброс цвета
+    bars.forEach(bar => (bar.style.backgroundColor = "#007bff")); 
     if (bars[index1]) bars[index1].style.backgroundColor = "red";
     if (bars[index2]) bars[index2].style.backgroundColor = "red";
 }
 
-// Установка задержки
+
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// Слушатели событий
+
 const generateBtn = document.getElementById("generate-btn");
 const bubbleSortBtn = document.getElementById("bubble-sort-btn");
 const insertionSortBtn = document.getElementById("insertion-sort-btn");
@@ -114,5 +111,5 @@ bubbleSortBtn.addEventListener("click", bubbleSort);
 insertionSortBtn.addEventListener("click", insertionSort);
 quickSortBtn.addEventListener("click", () => quickSort());
 
-// Генерация массива при загрузке страницы
+
 generateArray(20);
